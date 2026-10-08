@@ -9,7 +9,13 @@ st.set_page_config(page_title="Lossless Video Cutter", page_icon="🎬")
 st.title("⚡ Lossless Instant Video Cutter")
 st.write("Video upload karein aur exact durations enter karke original quality clips ZIP me download karein!")
 
-uploaded_file = st.file_uploader("📹 Original Video Upload Karein", type=["mp4", "mov", "avi", "mkv"])
+# Large file upload stability setting
+uploaded_file = st.file_uploader(
+    "📹 Original Video Upload Karein", 
+    type=["mp4", "mov", "avi", "mkv"],
+    accept_multiple_files=False
+)
+
 durations_text = st.text_area(
     "⏱️ Durations Enter Karein (Seconds me)", 
     value="1.3, 0.2, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.8, 1.0, 0.9, 0.9, 1.0, 0.8, 1.9"
